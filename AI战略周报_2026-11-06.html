@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI范式转移下的个人生存与发展 · 战略周报 | 2026.11.06</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0a0a0f;
+    color: #e8e8ef;
+    line-height: 1.75;
+    padding: 40px 20px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  
+  /* Header */
+  .header {
+    border-left: 4px solid #00d4ff;
+    padding-left: 24px;
+    margin-bottom: 48px;
+  }
+  .header .tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #00d4ff20, #7b2ff720);
+    border: 1px solid #00d4ff40;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #00d4ff;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header .meta {
+    color: #888;
+    font-size: 13px;
+  }
+  
+  /* Section */
+  .section {
+    background: linear-gradient(180deg, #131320, #0f0f18);
+    border: 1px solid #1e1e2e;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+  }
+  .section h2 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #1e1e2e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h2 .num {
+    background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+    color: #0a0a0f;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .section h3 {
+    font-size: 16px;
+    color: #00d4ff;
+    margin: 20px 0 10px;
+  }
+  
+  /* Content */
+  p { margin-bottom: 12px; color: #c0c0cc; }
+  strong { color: #fff; }
+  .highlight {
+    background: linear-gradient(135deg, #7b2ff730, #00d4ff30);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #fff;
+  }
+  
+  /* Card Grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .card {
+    background: #0d0d16;
+    border: 1px solid #1e1e2e;
+    border-radius: 8px;
+    padding: 18px;
+  }
+  .card .card-title {
+    font-weight: 600;
+    color: #7b2ff7;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .card .card-content {
+    font-size: 14px;
+    color: #a0a0b0;
+  }
+  
+  /* Quote Block */
+  .quote {
+    border-left: 3px solid #7b2ff7;
+    padding: 12px 16px;
+    background: #0d0d16;
+    margin: 12px 0;
+    font-style: italic;
+    color: #b0b0c0;
+    font-size: 14px;
+  }
+  .quote cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+    font-style: normal;
+  }
+  
+  /* Matrix */
+  .matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .swot-box {
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .swot-box .swot-label {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .swot-box ul { padding-left: 18px; color: #d0d0d8; }
+  .swot-box li { margin-bottom: 4px; }
+  .S { background: #1a2e1a; border: 1px solid #4ade80; }
+  .S .swot-label { color: #4ade80; }
+  .W { background: #2e1a1a; border: 1px solid #f87171; }
+  .W .swot-label { color: #f87171; }
+  .O { background: #1a1e2e; border: 1px solid #00d4ff; }
+  .O .swot-label { color: #00d4ff; }
+  .T { background: #2e2a1a; border: 1px solid #fbbf24; }
+  .T .swot-label { color: #fbbf24; }
+  
+  /* Timeline Bar */
+  .hype-bar {
+    background: #0d0d16;
+    border: 1px solid #1e1e2e;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 16px 0;
+  }
+  .bar-track {
+    height: 8px;
+    background: linear-gradient(90deg, #22c55e, #eab308, #ef4444, #eab308, #22c55e);
+    border-radius: 4px;
+    position: relative;
+    margin: 20px 0 10px;
+  }
+  .bar-marker {
+    position: absolute;
+    top: -6px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    border: 3px solid #00d4ff;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px #00d4ff80;
+  }
+  .bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+  }
+  
+  /* Action List */
+  .action-list { list-style: none; margin: 12px 0; }
+  .action-list li {
+    background: #0d0d16;
+    border: 1px solid #1e1e2e;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .action-list .icon {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .action-list .title {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .action-list .desc {
+    font-size: 13px;
+    color: #888;
+  }
+  
+  /* Divergence Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #1e1e2e;
+  }
+  th {
+    color: #7b2ff7;
+    font-weight: 600;
+    background: #0d0d16;
+  }
+  td { color: #b0b0c0; }
+  tr:hover td { background: #131320; }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 0 0;
+    color: #555;
+    font-size: 12px;
+    border-top: 1px solid #1e1e2e;
+    margin-top: 32px;
+  }
+  .footer .slogan {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+  <span class="tag">战略周报 · WEEK 45</span>
+  <h1>AI范式转移下的个人生存与发展</h1>
+  <p class="meta">2026年11月6日 · 首席战略官收口版 · 终极追问：无论行业如何洗牌，如何确保自己始终在牌桌上？</p>
+</div>
+
+<!-- 00. Executive Summary -->
+<div class="section">
+  <h2><span class="num">00</span>本期一句话结论</h2>
+  <p><span class="highlight">入场布局期，非观望等待期。</span></p>
+  <p>Gartner刚把Agentic AI标记在"期望膨胀期顶峰"，同时GenAI已滑入"泡沫破裂低谷期"——<strong>这两个信号同时出现，恰恰是个人超级个体入场的精确窗口</strong>。巨头泡沫破裂会挤死中间层，给你腾出位置；但Agentic AI还在顶峰，意味着资本和市场还愿意为故事买单。<strong>6个月内，你要么成为"Agent编排者"，要么被"Agent执行者"淘汰。没有中间态。</strong></p>
+</div>
+
+<!-- 01. 顶层共识摘要 -->
+<div class="section">
+  <h2><span class="num">01</span>全球顶层智囊共识摘要（情报官A）</h2>
+  
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">周鸿祎 · 百亿智能体时代</div>
+      <div class="card-content">"从大模型之年 → 智能体之年 → 百亿智能体之年"。龙虾类Agent有安全隐患，<strong>"以模治模"是下一个刚需赛道</strong>。360 ADE认证纳入工信部紧缺人才工程——"Agent安全治理"正在成为国家层面的新工种。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Dario Amodei · 放慢前沿，给后来者窗口</div>
+      <div class="card-content">长文《We Must Pace the Frontier》主张放慢模型能力提升速度（1-2年安全窗口）。<strong>真实意图：用监管放慢巨头，给小竞争者留空间</strong>。AI scaling曲线接近终点，但"Agent编排"的爆炸才刚开始。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Bill Gates · 第一次希望新技术慢下来</div>
+      <div class="card-content">万字长文《动荡的AI时代已经到来》：提出为部分职业划<strong>"人类保留区"</strong>、对AI Token和机器人征税。直言<strong>"这是我见过对就业冲击最快的技术"</strong>——过去100年的经验不够用。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">吴恩达 · Loop Engineering是新技能</div>
+      <div class="card-content">三层循环论：<strong>秒级Agent编码循环 / 开发者反馈循环 / 周级产品迭代循环</strong>。Agentic AI四大设计模式：Reflection（反思）/ Tool Use / Planning / Multi-Agent。"写代码"正在被"设计Agent工作流"取代。</div>
+    </div>
+  </div>
+
+  <div class="quote">
+    本周共识（4/4）：<strong>人类角色从"执行者"转向"编排者（Orchestrator）"</strong>。无论快慢、无论安全与否，这个方向没有争议。
+    <cite>—— 情报分析矩阵</cite>
+  </div>
+</div>
+
+<!-- 02. 国内实践者案例拆解 -->
+<div class="section">
+  <h2><span class="num">02</span>国内一线实践者拆解（情报官B）</h2>
+
+  <h3>案例一：胡彦斌 "彦火" —— 第一个Vibe Coding做APP的歌手</h3>
+  <p>一个半月消耗52亿Token，零基础从想法到iOS上架，全程用自然语言提需求、让AI写代码。核心价值不在App本身（粉丝社区是红海），而在于<strong>他用行动验证了"个人IP × Vibe Coding = 零成本冷启动"</strong>的可能性——他的粉丝就是第一批用户，不需要PR也不缺种子流量。</p>
+  <div class="quote">
+    "技术降低了门槛，但创作者的感知力、审美、真诚，永远无法被替代。" —— 胡彦斌
+    <cite>2026年10月，与蒂姆·库克对谈</cite>
+  </div>
+  <p><strong>可复制启示：</strong>你的行业IP（哪怕是垂直领域的小IP）+ AI编码能力 > 传统程序员 + 0行业认知。胡彦斌不是最好的程序员，甚至不是程序员，但他是<strong>最好的"需求翻译官"</strong>。</p>
+
+  <h3>案例二：王腾 ISHO 今日宜休 —— 从小米到睡眠AI生态</h3>
+  <p>种子轮，智能戒指+温控硬件+<strong>ISHO Personal Agent</strong>生理信号大模型。关键战略：<strong>用硬件传感器数据喂养Agent，Agent再输出决策——形成闭环飞轮</strong>。硬件（戒指）不是目的，是Agent获得高质量输入的手段。这比纯软件AI应用有更高的壁垒。</p>
+  <p><strong>可复制启示：</strong>AI创业的壁垒正在从"模型参数"转向"专属数据流"。如果你能控制一个独特的数据入口（哪怕是一个小众场景），你就有了护城河。</p>
+
+  <h3>案例三：Kimi Work · 300个Agent协同工作流</h3>
+  <p>把Agent集群能力拉到一个新量级——调研Agent、数据分析Agent、产品Agent、美术Agent同时干活。这意味着：<strong>如果你还在用单Agent做事情，你已经落后了整整一个代际</strong>。</p>
+</div>
+
+<!-- 03. 技术底层信号 -->
+<div class="section">
+  <h2><span class="num">03</span>技术底层信号扫描（情报官C）</h2>
+  
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">GitHub Trending · Skills接管前3</div>
+      <div class="card-content">本周Top 16中13个是Agent配套工具。Top 3全是Skills（Impeccable、Hallmark等AI风格检测）。<strong>Agent生态正在爆发，配套工具比Agent本身更多</strong>——这就是早期红利。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">a16z · Computer Use达85%成功率</div>
+      <div class="card-content">最新模型在OSWorld-Verified上得分85%，超过人类的72%。"System of Intelligence"取代"System of Record"（CRM被降级为输入源）。<strong>Agent先执行、再请求批准</strong>——a16z押注的赢者模式。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">DeepSeek Super-Agent</div>
+      <div class="card-content">MIT协议开源，<strong>主动监控聊天、发现问题自动发修复代码</strong>——这打破了"人类先分配任务"的旧范式。Agent开始具备主动行为，这是真正的"Agentic"标志。</div>
+    </div>
+    <div class="card">
+      <div class="card-title">就业数据 · FDE薪资爆炸</div>
+      <div class="card-content">LinkedIn 2026：FDE（Full-Stack Developer with AI）招聘增长<strong>42倍</strong>，月薪3-8万。计算机应届毕业生失业率从6.1%→7.0%。<strong>初级岗缩量、编排岗放量</strong>——剪刀差已经形成。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 04. 康波周期 + 技术成熟度曲线 -->
+<div class="section">
+  <h2><span class="num">04</span>【方法论暴力破解】Gartner技术成熟度曲线定位</h2>
+  
+  <p><strong>先定位置：</strong>Gartner 2026把Agentic AI首次从GenAI中拆分出来单独制图——这本身就是一个里程碑。两个关键数字：</p>
+  <ul style="padding-left:20px; color:#c0c0cc; margin:12px 0;">
+    <li><strong>Agentic AI：处于"期望膨胀期顶峰"</strong>（17%已部署，60%计划2年内部署）</li>
+    <li><strong>GenAI基础模型：已滑入"泡沫破裂低谷期"</strong>（40% Agent项目会被取消）</li>
+    <li><strong>两者交叉点 = 精确入场窗口</strong></li>
+  </ul>
+
+  <div class="hype-bar">
+    <p style="color:#00d4ff; font-weight:600; margin-bottom:4px;">📊 当前位置可视化</p>
+    <div class="bar-track">
+      <div class="bar-marker" style="left: 32%;" title="GenAI - 泡沫破裂谷底"></div>
+      <div class="bar-marker" style="left: 18%;" title="Agentic AI - 期望膨胀顶峰"></div>
+    </div>
+    <div class="bar-labels">
+      <span>技术萌芽</span>
+      <span>期望膨胀</span>
+      <span style="color:#ef4444;">泡沫谷底</span>
+      <span>稳步爬升</span>
+      <span>生产成熟</span>
+    </div>
+    <p style="font-size:12px; color:#666; margin-top:10px;">
+      ● Agentic AI 在顶峰（融资热、预期高，但交付能力待验证）<br>
+      ● GenAI 在谷底（巨头烧钱收缩，但应用层刚需浮现）<br>
+      ● <strong>这不是矛盾，是同一枚硬币的两面：</strong>基础层出清，应用层入场。
+    </p>
+  </div>
+
+  <p><strong>周期推导：</strong></p>
+  <p>康波周期视角下，我们仍在第五轮"信息通信技术周期"的扩散末期。生成式AI作为通用技术（General Purpose Technology）的扩散速度比互联网快3倍——<strong>但通用技术的红利从来不会被基础层独占，而是在应用层爆发</strong>。</p>
+  <p>盖茨说"第一次希望AI慢一点"，Amodei说"放慢前沿速度给小竞争者留空间"——这两个巨头的"慢下来"宣言，实际上是在<strong>为自己争取安全时间，同时为你争取入场机会</strong>。当巨头开始呼吁减速，就是散户开始入场的经典信号。</p>
+  <p><strong>判断：入场布局期，非观望等待期。窗口预计持续到2027年Q1（Agentic AI滑入谷底前）。</strong></p>
+</div>
+
+<!-- 05. SWOT 分析 -->
+<div class="section">
+  <h2><span class="num">05</span>【SWOT矩阵】你的牌桌位置</h2>
+  
+  <div class="matrix">
+    <div class="swot-box S">
+      <div class="swot-label">🟢 S · 优势</div>
+      <ul>
+        <li>Vibe Coding实现10倍速效率</li>
+        <li>个人IP × AI编码 = 零成本冷启动</li>
+        <li>没有大厂的组织惯性和审批链</li>
+        <li>可在多领域快速测试PMF</li>
+      </ul>
+    </div>
+    <div class="swot-box W">
+      <div class="swot-label">🔴 W · 劣势</div>
+      <ul>
+        <li>初级编码能力贬值（失业率↑9-10%）</li>
+        <li>没有大厂的数据和算力资源</li>
+        <li>个人品牌和信任背书不足</li>
+        <li>融资窗口正在关闭种子轮</li>
+      </ul>
+    </div>
+    <div class="swot-box O">
+      <div class="swot-label">🔵 O · 机会</div>
+      <ul>
+        <li>行业知识壁垒（非技术）成护城河</li>
+        <li>Agent配套工具生态红利（早期）</li>
+        <li>巨头出清中间层，腾出市场空白</li>
+        <li>FDE薪资暴涨42倍——付费意愿强</li>
+      </ul>
+    </div>
+    <div class="swot-box T">
+      <div class="swot-label">🟡 T · 威胁</div>
+      <ul>
+        <li>AI Agent全自动化工作流普及</li>
+        <li>基础模型成本下降 → 巨头重启烧钱</li>
+        <li>Agentic AI泡沫破裂（40%项目取消）</li>
+        <li>"Agent安全治理"合规成本上升</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quote">
+    <strong>SWOT核心洞察：</strong>优势和机会都指向"行业+Agent"的组合。劣势和威胁都指向"纯技术"的单点。<br>
+    → <strong>解法：把行业知识塞进Agent，用Agent杠杆化行业服务。</strong>
+    <cite>—— 宏观策略师，基于本轮情报蒸馏</cite>
+  </div>
+</div>
+
+<!-- 06. 生产力变革推演 -->
+<div class="section">
+  <h2><span class="num">06</span>【生产力规律】个人的新生产关系</h2>
+
+  <p>当AI成为"通用技术（GPTs）"时，个体不再依附于"大厂工位"，而是转向<strong>"超级个体 + 数字员工（Agent）"</strong>的微观生产关系。</p>
+
+  <h3>马克思生产力三要素对照</h3>
+  <div class="hype-bar" style="padding:20px;">
+    <table>
+      <tr><th style="color:#00d4ff;">生产力要素</th><th style="color:#7b2ff7;">传统工业/互联网时代</th><th style="color:#4ade80;">AI Agent时代</th></tr>
+      <tr><td>劳动者</td><td>工位上的"执行者"</td><td>少数人类"编排者"</td></tr>
+      <tr><td>劳动资料</td><td>电脑+办公室</td><td>Agent集群 + Vibe Coding</td></tr>
+      <tr><td>劳动对象</td><td>大厂分配的任务</td><td>自己定义的目标</td></tr>
+      <tr><td>生产关系</td><td>雇佣制 · 科层制</td><td>合伙人制 · 目标驱动</td></tr>
+    </table>
+  </div>
+
+  <p><strong>关键推演：</strong></p>
+  <p>周鸿祎说"AI普惠"（百亿Agent人人可用），吴恩达说"Agent工作流"（多层循环编排）——两人从不同方向指向同一个结论：<strong>你必须从"写代码的人"变成"编排Agent的人"</strong>。</p>
+  <p>胡彦斌的案例就是这个范式的完美演示：他不是程序员，但他能<strong>把音乐行业的需求翻译成AI能执行的工作流</strong>。未来1-2年，"会写代码的人"会过剩，但<strong>"会给Agent写需求的人"会奇缺</strong>。</p>
+  <p>这不是技能升级，是<strong>身份切换</strong>：从被管理者变成管理者（管理Agent集群）。</p>
+</div>
+
+<!-- 07. 认知升级 -->
+<div class="section">
+  <h2><span class="num">07</span>【认知升级】本周共识 vs 分歧</h2>
+
+  <h3>✅ 共识（所有人都同意的）</h3>
+  <ul style="padding-left:20px; color:#c0c0cc; margin:12px 0;">
+    <li>人类角色从"执行者"转向"编排者（Orchestrator）"</li>
+    <li>Agentic AI的爆发是真实的，不是泡沫</li>
+    <li>纯编码能力贬值，FDE薪资上涨（剪刀差）</li>
+    <li>行业知识 + AI > 纯AI能力</li>
+  </ul>
+
+  <h3>⚠️ 分歧（本周最值得追踪的）</h3>
+  <table>
+    <tr><th>维度</th><th>阵营A（Amodei派）</th><th>阵营B（a16z/吴恩达派）</th></tr>
+    <tr><td>AI节奏</td><td>放慢前沿速度，给安全窗口</td><td>加速迭代，赢者通吃</td></tr>
+    <tr><td>开源态度</td><td>微妙（反对无限制开源权重）</td><td>支持（认为是创新土壤）</td></tr>
+    <tr><td>Agent定位</td><td>安全优先，有限自治</td><td>先执行再批准（高自治）</td></tr>
+    <tr><td>监管态度</td><td>支持（真实动机：给小公司空间）</td><td>谨慎（怕限制创新速度）</td></tr>
+  </table>
+
+  <div class="quote">
+    <strong>本周最有价值的分歧：</strong>a16z vs Amodei 的"Agent自治度"之争。这直接关系到你做Agent时的"批准循环"设计——是让Agent全自动执行，还是每步都让人类确认？<br>
+    → <strong>建议：你的第一个Agent用"先执行再批准"模式（a16z派），因为这是市场正在为其买单的模式。</strong>
+    <cite>—— 首席战略官判断</cite>
+  </div>
+</div>
+
+<!-- 08. 能力拼图 -->
+<div class="section">
+  <h2><span class="num">08</span>【能力拼图】本周急需补齐的是什么？</h2>
+
+  <p>结合SWOT和领袖共识，答案非常明确：<strong>不是Prompt Engineering，是"Agent工作流设计 + 行业业务洞察"</strong>。</p>
+
+  <div class="card-grid">
+    <div class="card" style="border-color:#4ade8060;">
+      <div class="card-title" style="color:#4ade80;">应该投入 ⬇️</div>
+      <div class="card-content">
+        <strong>Agent工作流设计</strong>（吴恩达四大模式：Reflection / Tool Use / Planning / Multi-Agent）<br>
+        <strong>你的行业的业务洞察</strong>（ISHO证明：独有数据入口 = 壁垒）<br>
+        <strong>Vibe Coding实操</strong>（胡彦斌证明：需求翻译 > 代码实现）
+      </div>
+    </div>
+    <div class="card" style="border-color:#f8717160;">
+      <div class="card-title" style="color:#f87171;">暂时放一放 ❌</div>
+      <div class="card-content">
+        <strong>底层模型微调</strong>（成本高、周期长、壁垒已被巨头筑死）<br>
+        <strong>纯Prompt技巧</strong>（会被新模型的Instruction Following抹平）<br>
+        <strong>考证/认证</strong>（除了360 ADE这种稀缺资质外，大多数证书价值缩水）
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 09. 下周执行清单 -->
+<div class="section">
+  <h2><span class="num">09</span>【下周执行清单】（可量化、可交付）</h2>
+
+  <ul class="action-list">
+    <li>
+      <div class="icon">🎬</div>
+      <div>
+        <div class="title">观看吴恩达 Agentic AI 课程前3课</div>
+        <div class="desc">目标：掌握 Reflection、Tool Use、Planning 三大模式的实操。不要看免费Youtube剪辑，直接去 deeplearning.ai 上有完整练习环境。交付物：你的第一个带 Reflection 模式的Demo。</div>
+      </div>
+    </li>
+    <li>
+      <div class="icon">📱</div>
+      <div>
+        <div class="title">下载体验"彦火"APP，拆解其AI编码逻辑</div>
+        <div class="desc">目标：把它当作一个Vibe Coding的真实案例研究。用浏览器开发者工具或AI代码审查工具反推它的技术栈和架构设计。交付物：一页纸的技术拆解笔记。</div>
+      </div>
+    </li>
+    <li>
+      <div class="icon">⚡</div>
+      <div>
+        <div class="title">搭建你的第一个"多Agent协同"工作流</div>
+        <div class="desc">目标：选一个具体任务（例如"调研一个行业 + 自动生成简报 + 配好封面图"），用3-5个Agent协同完成。推荐起点：Cursor + MCP 或 LangGraph。交付物：可运行的Workflow截图 + 产出的简报。</div>
+      </div>
+    </li>
+    <li>
+      <div class="icon">📈</div>
+      <div>
+        <div class="title">追踪Amodei vs a16z 关于Agent自治度的最新辩论</div>
+        <div class="desc">目标：注册 a16z news 订阅和 Anthropic 研究博客，设置RSS自动提醒。本周他们可能有新文章（Amodei每2周发一篇长文）。交付物：把分歧表第3列填充新观点。</div>
+      </div>
+    </li>
+    <li>
+      <div class="icon">🔐</div>
+      <div>
+        <div class="title">了解一下Agent安全治理（360 ADE的大纲）</div>
+        <div class="desc">目标：这是周鸿祎说的"龙虾类Agent"刚需赛道，Gartner也指出2027年会爆发。现在开始关注，半年后你就是这个方向的早鸟。交付物：360 ADE认证大纲的1页笔记。</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- 10. 长期追踪表 -->
+<div class="section">
+  <h2><span class="num">10</span>【长期追踪表】（持续迭代）</h2>
+
+  <h3>领袖观点分歧表（本周更新）</h3>
+  <table>
+    <tr><th>议题</th><th>Dario Amodei（Anthropic）</th><th>吴恩达（DeepLearning.AI）</th><th>Gates</th><th>周鸿祎</th></tr>
+    <tr>
+      <td>AI节奏</td>
+      <td>放慢前沿（给安全窗口）</td>
+      <td>加速迭代（赢者通吃）</td>
+      <td>第一次希望慢下来</td>
+      <td>Agent普惠加速</td>
+    </tr>
+    <tr>
+      <td>Agent定位</td>
+      <td>安全优先 · 有限自治</td>
+      <td>三层循环 · 高自治</td>
+      <td>人类保留区</td>
+      <td>以模治模 · 安全Agent</td>
+    </tr>
+    <tr>
+      <td>个体定位</td>
+      <td>等待出清后入场</td>
+      <td>立即学习Loop Engineering</td>
+      <td>被保护 vs 被冲击</td>
+      <td>编排者</td>
+    </tr>
+  </table>
+
+  <h3>实践者踩坑录（本周新增）</h3>
+  <table>
+    <tr><th>人物/项目</th><th>踩的坑</th><th>验证的PMF</th></tr>
+    <tr>
+      <td>胡彦斌 · 彦火</td>
+      <td>一个半月52亿Token——成本控制是Vibe Coding的隐形杀手</td>
+      <td>个人IP + Vibe Coding = 零冷启动成本</td>
+    </tr>
+    <tr>
+      <td>王腾 · ISHO</td>
+      <td>种子轮 + 硬件——对早期现金流压力极大</td>
+      <td>传感器数据 → Agent输入 → 决策闭环的壁垒</td>
+    </tr>
+    <tr>
+      <td>Gartner数据</td>
+      <td>40% Agentic AI项目会被取消</td>
+      <td>GenAI滑入谷底 + AgentAI在顶峰 = 应用层精确入场窗口</td>
+    </tr>
+  </table>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p class="slogan">"无论行业如何洗牌，确保自己始终在牌桌上"</p>
+  <p>战略周报 · Week 45 · 2026.11.06</p>
+  <p style="margin-top:8px;">本期数据来源：Gartner 2026 Hype Cycle · a16z Research · 周鸿祎/Amodei/Gates/吴恩达公开演讲 · GitHub Trending · Hacker News</p>
+</div>
+
+</div>
+</body>
+</html>
